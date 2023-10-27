@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
 
-const Person = () => {
-  return (
-    <>
-      <h1>Nanou</h1>
-      <h2>Aramis</h2>
-      <h3>26 ans kwa</h3>
-    </>
-  )
-}
+const API_URL = 'http://www.omdbapi.com?apikey=4436535b';
+
 const App = () => {
-  const name = 'Nanou';
-  const isNameShowing = true;
+
+  const searchMovies = async (title) => {
+    const response = await fetch(`${API_URL}&s=${title}`);
+    const data = await response.json();
+
+    console.log(data.Search);
+  }
+  useEffect(() => {
+    searchMovies('Spiderman');
+  }, []);
+
   return (
-    <div className="App">
-      <h1>Coucou {isNameShowing ? name : 'personne dont je me fous parce que c pas nanou euh'}</h1>
-      <Person />
-    </div>
+    <h1>App</h1>
   );
 }
 
 export default App;
+
+// API Key : 4436535b
