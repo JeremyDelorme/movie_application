@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
-@import url("https://fonts.googleapis.com/css?family=Baloo+2:400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 
 * {
   margin: 0;
@@ -9,21 +9,12 @@
 
 :root {
   --font-roboto: "Roboto Slab", serif;
-  --font-baloo: "Baloo 2", cursive;
-  --background-color: #FDD862;
-  --movie-card-color: #FDD862;
-  --text-color: #FDD862;
-  --yellow: #FFDD862;
-  --gray: #808080;
-  --milk-chocolate-brown: #7B3F00;
-  --orange: #ee8d0f;
-  --beige: #F5F5DC; /* New beige color for text */
+  --font-raleway: "Raleway", sans-serif;
 }
 
 body {
   font-family: var(--font-roboto);
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: #212426;
 }
 
 .app {
@@ -40,43 +31,41 @@ h1 {
   letter-spacing: 0.9px;
   background: linear-gradient(
     90deg,
-    var(--orange),
-    var(--orange)
+    rgba(249, 211, 180, 1) 0%,
+    rgba(249, 211, 180, 0) 100%
   );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: fit-content;
-  text-align: center;
-  font-family: var(--font-baloo);
 }
 
-.search-container {
+.search {
   width: 71%;
   margin: 4rem 0 2rem;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 2rem;
-  border-radius: 1rem;
-  background: var(--orange);
-  box-shadow: 5px 5px 7px #87CEEB, -5px -5px 7px #87CEEB;
+  justify-content: center;
+
+  padding: 1.5rem 1.75rem;
+  border-radius: 3rem;
+  background: #1f2123;
+  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
 }
 
 .search input {
-  width: 70%;
+  flex: 1;
   border: none;
   font-size: 1.5rem;
   font-family: var(--font-raleway);
   font-weight: 500;
-  padding: 0.5rem;
-  border-radius: 1rem;
-  margin-right: 1rem;
+  padding-right: 1rem;
+
   outline: none;
-  color: var(--beige); /* New beige color for text */
-  background: var(--orange);
+  color: #a1a1a1;
+  background: #1f2123;
 }
 
 .search img {
@@ -84,6 +73,21 @@ h1 {
   height: 35px;
   cursor: pointer;
 }
+
+/* .search button {
+  padding: 20px 40px;
+  border-radius: 0.5rem;
+  margin-left: 15px;
+  color: #a1a1a1;
+  font-family: var(--font-raleway);
+  font-weight: 900;
+  letter-spacing: 0.75px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  background: #1f2123;
+  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+} */
 
 .empty {
   width: 100%;
@@ -96,7 +100,7 @@ h1 {
 
 .empty h2 {
   font-size: 1.25rem;
-  color: var(--yellow);
+  color: #f9d3b4;
   font-family: var(--font-raleway);
 }
 
@@ -130,8 +134,7 @@ h1 {
   width: 100%;
   opacity: 0;
   top: 0;
-  color: var(--yellow);
-  font-family: var(--font-baloo);
+  color: #f9d3b4;
 }
 
 .movie:hover {
@@ -151,7 +154,7 @@ h1 {
 
 .movie div:nth-of-type(3) {
   z-index: 2;
-  background: var(--movie-card-color);
+  background-color: #343739;
   padding: 16px 24px 24px 24px;
 
   position: absolute;
@@ -161,18 +164,18 @@ h1 {
 }
 
 .movie div:nth-of-type(3) span {
-  font-family: var(--font-baloo);
+  font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: 2px;
   font-weight: 500;
-  color: var(--gray);
+  color: #f0f0f0;
 }
 
 .movie div:nth-of-type(3) h3 {
   margin-top: 5px;
-  color: var(--yellow);
-  font-family: var(--font-baloo);
+  font-family: "Roboto Slab", serif;
+  color: #f9d3b4;
 }
 
 .movie:hover div:nth-of-type(2) {
@@ -193,8 +196,8 @@ h1 {
     padding: 4rem 2rem;
   }
 
-  .search-container {
-    padding: 1rem;
+  .search {
+    padding: 1rem 1.75rem;
     width: 100%;
   }
 
@@ -205,5 +208,24 @@ h1 {
   .search img {
     width: 20px;
     height: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .app {
+    padding: 4rem 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .container {
+    margin-top: 2rem;
+  }
+
+  .movie {
+    width: "100%";
+    margin: 1rem;
   }
 }
